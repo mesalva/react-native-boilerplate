@@ -11,7 +11,7 @@ import {
 import CommonStyles from "../Utils/CommonStyles"
 import { AccessToken, LoginManager } from "react-native-fbsdk"
 import Spinner from "react-native-loading-spinner-overlay"
-import firebase from '@react-native-firebase/app'
+import auth, {firebase} from '@react-native-firebase/auth'
 
 export default class FBLogin extends Component {
   constructor(props) {
@@ -34,10 +34,12 @@ export default class FBLogin extends Component {
   }
 
   facebookLogin = async () => {
+
     try {
-      const result = await LoginManager.logInWithReadPermissions([
-        "public_profile",
-        "email"
+      
+      const result = await LoginManager.logInWithPermissions([
+        'public_profile',
+        'email'
       ])
 
       if (result.isCancelled) {
@@ -55,7 +57,7 @@ export default class FBLogin extends Component {
 
       // obtendo o token de acesso
       const data = await AccessToken.getCurrentAccessToken()
-
+      console.log('AccessToken',JSON.stringify(data,null,4))
       if (!data) {
         // Se por algum motivo não recebemos o token então
         // desviamos o fluxo a fim de minimizar erros
@@ -71,14 +73,11 @@ export default class FBLogin extends Component {
       this.setState({ spinner: true })
 
       // Criando uma nova credencial com o Token
-      const credential = firebase.auth.FacebookAuthProvider.credential(
-        data.accessToken
-      )
+      const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken)
 
       // Login com a credential
-      await firebase
-        .auth()
-        .signInWithCredential(credential)
+      await firebase.auth().signInWithCredential(credential)
+
     } catch (error) {
       this.setState({ spinner: false })
       setTimeout(() => {
