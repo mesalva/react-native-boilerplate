@@ -8,8 +8,7 @@ import {
   StyleSheet
 } from "react-native"
 import CommonStyles from "../Utils/CommonStyles"
-import firebase from '@react-native-firebase/app'
-import auth from '@react-native-firebase/auth'
+import auth, {firebase} from '@react-native-firebase/auth'
 import { LoginManager } from "react-native-fbsdk"
 import { GoogleSignin } from '@react-native-community/google-signin'
 
@@ -20,7 +19,7 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    const { currentUser } = auth()
+    const { currentUser } = firebase.auth()
     this.setState({ currentUser })
     console.log("Home Screen")
     console.log("====================================")
