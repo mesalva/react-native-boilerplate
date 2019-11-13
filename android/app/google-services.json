@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "791027876697",
+    "firebase_url": "https://mesalva-boilerplate.firebaseio.com",
+    "project_id": "mesalva-boilerplate",
+    "storage_bucket": "mesalva-boilerplate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791027876697:android:4eb58481f665e713114248",
+        "android_client_info": {
+          "package_name": "com.andrelogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791027876697-91pgaoqig0timfg3bug2hk7470kbc76j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.andrelogin",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "791027876697-7porqha81cfqvnjaudb7iq4eu4kucr3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEN0h7oE08sBtULtfHatpcujCURFNQnW8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791027876697-7porqha81cfqvnjaudb7iq4eu4kucr3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
