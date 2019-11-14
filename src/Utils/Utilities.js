@@ -16,7 +16,6 @@ export function showAlert(
   buttonTitle = "OK"
 ) {
   setTimeout(() => {
-    console.log('showAlert')
     Alert.alert(baseLocal.t(title), message, [{ text: buttonTitle }])
   }, 200)
 }

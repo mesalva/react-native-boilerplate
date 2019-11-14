@@ -28,9 +28,14 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.791027876697-mtjegt7m1avoo2h5r5rqgud30pc9e45a</string>
+				 <string>fb130050807168932</string>
 			</array>
 		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>130050807168932</string>
+	<key>FacebookDisplayName</key>
+	<string>Me Salva</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>

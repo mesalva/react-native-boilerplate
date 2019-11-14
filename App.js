@@ -49,9 +49,6 @@ export default class App extends Component {
             })
             .then(() => {
               // usuário foi verificado e está logado
-              console.log("App.js ====================================")
-              console.log(user)
-              console.log("====================================")
 
               global.fullNameTemp = null
               global.currentUser = user
@@ -63,9 +60,6 @@ export default class App extends Component {
             })
         } else {
           
-          console.log("App.js ====================================")
-          console.log(user)
-          console.log("====================================")
           global.currentUser = user
           AsyncStorage.setItem(Constants.keyCurrentUser, JSON.stringify(user))
           this.setState({ isLogin: true })

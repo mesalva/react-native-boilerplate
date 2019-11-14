@@ -44,9 +44,6 @@ export default class FBLogin extends Component {
 
       if (result.isCancelled) {
         // Se por algum motivo foi cancelado desviamos o fluxo a fim de minimizar erros
-        console.log("====================================")
-        console.log("Login cancelado")
-        console.log("====================================")
         return
         // throw new Error("Cancelado pelo usuário")
       }
@@ -57,13 +54,11 @@ export default class FBLogin extends Component {
 
       // obtendo o token de acesso
       const data = await AccessToken.getCurrentAccessToken()
-      console.log('AccessToken',JSON.stringify(data,null,4))
+
       if (!data) {
         // Se por algum motivo não recebemos o token então
         // desviamos o fluxo a fim de minimizar erros
-        console.log("====================================")
-        console.log("Ocorreu um erro ao obter o token de acesso do usuário")
-        console.log("====================================")
+      
         return
         // throw new Error(
         //   "Ocorreu um erro ao obter o token de acesso dos usuários"
