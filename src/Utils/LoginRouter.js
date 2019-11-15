@@ -6,7 +6,7 @@ import GoogleLogin from "../Login/GoogleLogin"
 const LoginTab = createAppContainer(
   createBottomTabNavigator(
     {
-      FBLogin:FBLogin,
+      FBLogin: FBLogin,
       GoogleLogin:GoogleLogin,
     },
     {
