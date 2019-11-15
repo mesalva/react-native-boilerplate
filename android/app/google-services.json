@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "791027876697-dc7vvb4cd7tef6ahhp02aj7ejo7og70e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.andrelogin",
+            "certificate_hash": "9659279927513772e1709dcaecef0ed2758ac16e"
+          }
+        },
+        {
           "client_id": "791027876697-91pgaoqig0timfg3bug2hk7470kbc76j.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -38,6 +46,13 @@
             {
               "client_id": "791027876697-7porqha81cfqvnjaudb7iq4eu4kucr3f.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "791027876697-mtjegt7m1avoo2h5r5rqgud30pc9e45a.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.AndreLogin"
+              }
             }
           ]
         }
