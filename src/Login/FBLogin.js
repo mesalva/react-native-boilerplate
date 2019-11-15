@@ -57,7 +57,14 @@ export default class FBLogin extends Component {
         <Spinner visible={this.state.spinner} textStyle={CommonStyles.spinnerTextStyle} />
         <TouchableOpacity style={styles.facebookButton} onPress={this.facebookLogin}>
           <Text style={styles.facebookButtonTitle}>Continue com Facebook</Text>
-          <Text>{JSON.stringify({x: global.currentUser, y: global.currentStore})}</Text>
+          <View>
+            <Text>currentUser: {global.currentUser ? 'true' : 'false'} - </Text>
+            <Text>{JSON.stringify(global.currentUser || {})}</Text>
+          </View>
+          <View>
+            <Text>currentStore: {global.currentStore ? 'true' : 'false'} - </Text>
+            <Text>{JSON.stringify(global.currentStore||{})}</Text>
+          </View>
         </TouchableOpacity>
       </SafeAreaView>
     );
