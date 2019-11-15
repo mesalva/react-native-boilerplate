@@ -131,9 +131,10 @@ android {
         applicationId "com.andrelogin"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 2
+        versionCode 3
         versionName "1.0"
         multiDexEnabled true
+        resConfig "pt"
     }
     splits {
         abi {
