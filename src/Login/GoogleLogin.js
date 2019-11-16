@@ -39,15 +39,12 @@ export default class GoogleLogin extends Component {
       <SafeAreaView style={styles.container}>
         <Spinner visible={this.state.spinner} textStyle={CommonStyles.spinnerTextStyle} />
         <TouchableOpacity style={styles.facebookButton} onPress={this.googleLogin}>
-          <Text style={styles.facebookButtonTitle}>Continuar com Google</Text>
-          <Text>{JSON.stringify({ x: global.currentUser, y: global.currentStore })}</Text>
           <View>
-            <Text>currentUser: {global.currentUser ? 'true' : 'false'} - </Text>
-            <Text>{JSON.stringify(global.currentUser || {})}</Text>
-          </View>
-          <View>
-            <Text>currentStore: {global.currentStore ? 'true' : 'false'} - </Text>
-            <Text>{JSON.stringify(global.currentStore || {})}</Text>
+            <Text style={styles.facebookButtonTitle}>Continuar com Google</Text>
+            <View>
+              <Text>currentUser: {global.currentUser ? 'true' : 'false'} - </Text>
+              <Text>{JSON.stringify(global.currentUser || {})}</Text>
+            </View>
           </View>
         </TouchableOpacity>
       </SafeAreaView>

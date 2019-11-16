@@ -21,49 +21,36 @@ export default class FBLogin extends Component {
   facebookLogin = async () => {
     try {
       const result = await LoginManager.logInWithPermissions(['public_profile', 'email']);
+      if (result.isCancelled) throw new Error('Cancelado pelo usuário');
 
-      if (result.isCancelled) {
-        // Se por algum motivo foi cancelado desviamos o fluxo a fim de minimizar erros
-        throw new Error('Cancelado pelo usuário');
-      }
-
-      console.log(`Login realizado com successo: ${result.grantedPermissions.toString()}`);
-
-      // obtendo o token de acesso
       const data = await AccessToken.getCurrentAccessToken();
-
-      if (!data) {
-        // Se por algum motivo não recebemos o token então
-        // desviamos o fluxo a fim de minimizar erros
-        throw new Error('Ocorreu um erro ao obter o token de acesso dos usuários');
-      }
+      if (!data) throw new Error('Ocorreu um erro ao obter o token de acesso dos usuários');
 
       this.setState({spinner: true});
 
-      // Criando uma nova credencial com o Token
       const credential = firebase.auth.FacebookAuthProvider.credential(data.accessToken);
-
-      // Login com a credential
       await firebase.auth().signInWithCredential(credential);
     } catch (error) {
-      this.setState({spinner: false});
-      setTimeout(() => alert(error.message), 200);
+      this.loginError()
     }
   };
+
+  loginError(){
+    this.setState({spinner: false});
+    setTimeout(() => alert(error.message), 200);
+  }
 
   render() {
     return (
       <SafeAreaView style={styles.container}>
         <Spinner visible={this.state.spinner} textStyle={CommonStyles.spinnerTextStyle} />
         <TouchableOpacity style={styles.facebookButton} onPress={this.facebookLogin}>
-          <Text style={styles.facebookButtonTitle}>Continue com Facebook</Text>
           <View>
-            <Text>currentUser: {global.currentUser ? 'true' : 'false'} - </Text>
-            <Text>{JSON.stringify(global.currentUser || {})}</Text>
-          </View>
-          <View>
-            <Text>currentStore: {global.currentStore ? 'true' : 'false'} - </Text>
-            <Text>{JSON.stringify(global.currentStore||{})}</Text>
+            <Text style={styles.facebookButtonTitle}>Continuar com Facebook</Text>
+            <View>
+              <Text>currentUser: {global.currentUser ? 'true' : 'false'} - </Text>
+              <Text>{JSON.stringify(global.currentUser || {})}</Text>
+            </View>
           </View>
         </TouchableOpacity>
       </SafeAreaView>

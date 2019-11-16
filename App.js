@@ -40,7 +40,6 @@ export default class App extends Component {
 
   setupUser = () => {
     if (global.currentUser === null) return this.setState({isLogin: false, isStoreSet: false});
-    if (global.currentStore === null) return this.setState({isLogin: true, isStoreSet: false});
     this.setState({isLogin: true, isStoreSet: true});
   };
 
@@ -63,6 +62,7 @@ export default class App extends Component {
   };
 
   removeUser = () => {
+    global.currentUser = null
     AsyncStorage.removeItem(Constants.keyCurrentUser);
     this.setState({isLogin: false});
   };
